@@ -38,5 +38,7 @@ router.get('/product', controllers.product.list)
 // 获取商品详情
 // 有点像vue
 router.get('/product/:id', controllers.product.detail)
+// 增加一个订单
+router.get('/order/add', controllers.order.add)
 
 module.exports = router

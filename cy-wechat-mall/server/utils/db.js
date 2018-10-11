@@ -1,3 +1,4 @@
+// 按当前数据库情况配置的文件
 const mysql = require('mysql')
 const config = require('../config').mysql
 
