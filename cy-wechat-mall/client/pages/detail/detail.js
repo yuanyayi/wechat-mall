@@ -4,13 +4,13 @@ const config = require('../../config')
 
 Page({
 
-  /**
+  /**ss
    * 页面的初始数据
    */
   data: {
     // product: {
     //   id: 1,
-    //   image: 'https://product-1256088332.cos.ap-guangzhou.myqcloud.com/product2.jpg',
+    //   image: 'https://product-1256088332.cos.ap-guangzhou.myqcloud.com/products/product2.jpg',
     //   name: '商品',
     //   price: 480.5,
     //   source: '国内·广东'
@@ -103,5 +103,13 @@ Page({
         }, 2000)
       }
     })
+  },
+
+  // 立即购买
+  buy() {
+    console.log('buy');
+    let product = Object.assign({
+      count: 1
+    }, this.data.product)
   }
 })

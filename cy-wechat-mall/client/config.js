@@ -4,6 +4,7 @@
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://y7ctmpi2.qcloud.la';
+// 图片地址sql = "https://cy-wechat-mall-1257428156.cos.ap-beijing.myqcloud.com/products/"
 
 var config = {
 
@@ -26,10 +27,15 @@ var config = {
     //  自建路由
     // 查看商品信息
     productList: `${host}/weapp/product`,
+
     // 获取单一商品信息
     productDetail: `${host}/weapp/product/`,
+
     // 拉取用户信息
     user: `${host}/weapp/user`,
+
+    // 创建订单
+    addOrder: `${host}/weapp/order/add`,
   }
 };
 
