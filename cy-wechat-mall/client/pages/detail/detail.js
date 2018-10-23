@@ -107,9 +107,31 @@ Page({
 
   // 立即购买
   buy() {
-    console.log('buy');
-    let product = Object.assign({
-      count: 1
-    }, this.data.product)
+    wx.showLoading();
+    let product = Object.assign({count: 1}, {id: this.data.product.id})
+    // 腾讯云请求购买接口
+    // 文档说明： https://github.com/tencentyun/wafer2-client-sdk/blob/master/README.md#request
+    qcloud.request({
+      url: config.service.addOrder,
+      login: true,
+      method: 'POST',
+      data: {
+        list: [product]
+      },
+      success: data => {
+        wx.hideLoading();
+        wx.showToast({
+          title: data.code ? "商品购买失败" : "商品购买成功！",
+          icon: "none"
+        })
+      },
+      fail: ()=>{
+        wx.hideLoading();
+        wx.showToast({
+          title: "商品购买失败",
+          icon: "none"
+        })
+      }
+    })
   }
 })
